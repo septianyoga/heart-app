@@ -1,30 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('components.layout', ['title' => 'Heart App - Login'])
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-
-<body>
-    <form action="/login" method="post">
-        @csrf
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        @error('email')
-            <span>{{ $message }}</span>
-        @enderror
-        <br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        @error('password')
-            <span>{{ $message }}</span>
-        @enderror
-        <button type="submit">Login</button>
-    </form>
-    <a href="/register">Daftar</a>
-</body>
-
-</html>
+@section('content')
+    <section id="sign-in-screen">
+        <div class="logo-img">
+            <img src="assets/image-new/logo-heart.png" width="200" alt="">
+        </div>
+        <div class="container">
+            <div class="sign-in-screen_full">
+                <div class="sign-in-screen-top">
+                    <h1 class="text-center">Selamat Datang</h1>
+                    <form class="sign-in-form mt-16" action="/login" method="post">
+                        @csrf
+                        <div class="form-sec">
+                            <label class="txt-lbl">Email</label><br>
+                            <input type="email" id="email" name="email" placeholder="Email in here"
+                                class="txt-input">
+                            @error('email')
+                                <div class="form_bottom_boder">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-sec mt-32">
+                            <label class="txt-lbl">Password</label><br>
+                            <input type="password" id="password" name="password" placeholder="Password in here"
+                                class="txt-input">
+                            @error('password')
+                                <div class="form_bottom_boder">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="sign-in mt-32">
+                            <button type="submit">Sign In</button>
+                        </div>
+                    </form>
+                    {{--  <div class="row remember-sec">
+                        <div class="col-6">
+                        </div>
+                        <div class="col-6 d-flex justify-content-end align-items-center">
+                            <a href="forget-password-screen.html" class="forget-btn">Forget password?</a>
+                        </div>
+                    </div>  --}}
+                    <div class="block-footer">
+                        <p>Don’t have an account? <a href="/register">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

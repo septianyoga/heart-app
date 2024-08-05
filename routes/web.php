@@ -3,11 +3,17 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return view('auth.onboarding.onscreen-1');
+    })->name('on-screen-1');
+    Route::get('/on-screen-2', function () {
+        return view('auth.onboarding.onscreen-2');
+    })->name('on-screen-2');
+    Route::get('/on-screen-3', function () {
+        return view('auth.onboarding.onscreen-3');
+    })->name('on-screen-3');
     Route::get('/login', [AuthController::class, 'index'])->name('login');
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
