@@ -7,7 +7,6 @@
             <div class="main-header">
             </div>
             <div class="skip_btn_1 skip_btn">
-                <a href="javascript:void(0)">Skip</a>
             </div>
             <div class="img">
                 <img src="{{ asset('assets/image-new/ilustrasi/ilustrasi-3.png') }}" style="width: 100%;" alt="">
@@ -18,7 +17,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center" style="margin-top: 60px;">
                 <div class="btn-1">
-                    <a href="onboardscreen-2.html" class=""><svg xmlns="http://www.w3.org/2000/svg"
+                    <a href="{{ route('on-screen-2') }}" class=""><svg xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" fill="currentColor" class="bi bi-arrow-left-short"
                             viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -28,7 +27,7 @@
                     </a>
                 </div>
                 <div class="btn-1">
-                    <a href="sign-in-screen.html">
+                    <a href="{{ route('login') }}">
                         Next
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">

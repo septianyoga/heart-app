@@ -345,6 +345,7 @@ input[type=number] {
     text-decoration: none;
     color: #FB0865;
 }
+
 .Backtohome .test-again {
     width: 345px;
     height: 48px;
@@ -1728,21 +1729,175 @@ span.cart-item {
     justify-content: space-between;
 }
 
+.antrian-sec {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.antrian-sec-slide-full {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;
+    max-width: 100%;
+    border: 1px solid #7f7f7f;
+}
+
+.antrian-content-sec {
+    padding: 5px 10px;
+}
+
+.antrian-content-sec .btn-antrian {
+    text-align: center;
+    width: 100%;
+    padding: 5px 0;
+    margin: 30px 0 0 0;
+    border-radius: 15px;
+    background-color: #F90965;
+    color: #fff;
+}
+
+.antrian-content-sec .btn-antrian-success {
+    text-align: center;
+    width: 100%;
+    padding: 5px 0;
+    margin: 30px 0 0 0;
+    border-radius: 15px;
+    background-color: #07f155;
+    color: #fff;
+}
+
+.antrian-content-sec .btn-antrian a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.antrian-img-sec {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.antrian-img-sec img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+}
+
+.test-title-danger {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 24px;
+    color: #F90965;
+}
+
+.test-title-safe {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 24px;
+    color: #00930c;
+}
+
+.test-subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.test-subtitle-date {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.test-title-danger span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.test-title-safe span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.danger {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #F90965;
+}
+
+.safe {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #00930c;
+}
+
+
 .slider-content-sec {
     width: 50%;
     padding: 5px 16px;
 }
 
-.slider-content-sec-full .status .sibuk {
+.slider-content-sec .btn-antrian {
+    text-align: center;
+    width: 100%;
+    padding: 5px 0;
+    margin: 30px 0 0 0;
+    border-radius: 15px;
+    background-color: #F90965;
+    color: #fff;
+}
+
+.slider-content-sec .btn-antrian a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.status .sibuk {
     padding: 5px 15px;
     border-radius: 15px;
     background-color: #ee0000;
 }
 
-.slider-content-sec-full .status .kosong {
+.status .kosong {
     padding: 5px 15px;
     border-radius: 15px;
-    background-color: #00ff15;
+    background-color: #00930c;
 }
 
 .slider-img-sec {
@@ -1763,6 +1918,30 @@ span.cart-item {
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 16px;
+    line-height: 15px;
+    color: #1E293B;
+}
+
+.slider-pro-title-dr {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+    color: #1E293B;
+}
+
+.slider-pro-title-nomor-antrian {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1E293B;
+}
+
+.slider-pro-title-antrian {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 24px;
     line-height: 15px;
     color: #1E293B;
 }
@@ -2020,7 +2199,7 @@ span.cart-item {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: #1E293B !important;
+    color: #000000 !important;
     background-color: white !important;
 }
 
@@ -2660,8 +2839,19 @@ video.review-play-video {
     margin-top: 8px;
 }
 
-.profile-img-sec img {
-    border-radius: 60px;
+.profile-img-sec {
+    position: relative;
+}
+.profile-img-box{
+   width: 150px;
+   height: 150px;
+   overflow: hidden;
+}
+.profile-img-box .profile-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .profile-page-sec-full {
@@ -2687,9 +2877,7 @@ video.review-play-video {
     right: 0;
 }
 
-.profile-img-sec {
-    position: relative;
-}
+
 
 .profile-second-sec-full {
     display: -webkit-box;
@@ -5182,6 +5370,7 @@ a.product2-readmore.rotate-icon img {
     text-align: center;
     color: #ffffff;
 }
+
 .success-title-risk {
     font-family: 'Poppins';
     font-style: normal;
@@ -5190,6 +5379,7 @@ a.product2-readmore.rotate-icon img {
     text-align: center;
     color: #ffffff;
 }
+
 .success-title span {
     font-family: 'Poppins';
     font-style: normal;
@@ -6451,4 +6641,157 @@ ul.input.date-picker-input {
     font-style: normal;
     font-size: 18px;
     color: #F90965;
+}
+
+.test-detail .score {
+    text-align: center;
+    font-size: 36px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.score .score-title-danger {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 76px;
+    line-height: 24px;
+    color: #f90909;
+}
+
+.score .score-title-safe {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 76px;
+    line-height: 24px;
+    color: #00930c;
+}
+
+.score .score-subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.score-info-subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.score .score-title-danger span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.score .score-title-safe span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.score-danger {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f90909;
+}
+
+.score-safe {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #00930c;
+}
+
+.test-detail .risk-bars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.test-detail .info-test {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.risk-bars .bar {
+    width: 15px;
+    height: 60px;
+    margin: 0 4px;
+    border-radius: 4px;
+}
+
+.risk-bars .low-risk {
+    background-color: #00930c;
+}
+
+.risk-bars .high-risk {
+    background-color: #f90909;
+}
+
+.risk-bars .default {
+    background-color: gray;
+}
+
+.answer-test-card {
+    background-color: rgba(249, 9, 101, 0.5);
+
+}
+.answer-test-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.answer-test-subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.btn-logout {
+    text-align: center;
+    width: 60%;
+    padding: 5px;
+    margin: 30px 0 0 0;
+    border-radius: 15px;
+    background-color: #F90965;
+    border: 2px solid #F90965;
+    color: #fff;
+}
+.btn-logout:hover {
+    border: 2px solid #F90965;
+    background-color: #ffffff;
+}
+
+.btn-logout:hover a {
+    color: #F90965;
+}
+.btn-logout a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 600;
 }
