@@ -1,9 +1,9 @@
 @extends('user.test.components.base-test', ['title' => 'Soal 1'])
 @section('content-test')
     <!-- Homepage2 Details Section Start -->
-    <section id="test-sec">
+    <section id="test-sec" style="margin-bottom: -50px">
         <div class="test-first-sec">
-            <form action="">
+            <form action="{{ route('soal-2') }}">
                 <div class="question-sec" style="padding: 20px 0;">
                     <h2 class="question-sec-title">Umur</h2>
                 </div>

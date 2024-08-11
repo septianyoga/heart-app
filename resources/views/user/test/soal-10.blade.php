@@ -3,7 +3,7 @@
     <!-- Homepage2 Details Section Start -->
     <section id="test-sec">
         <div class="test-first-sec">
-            <form id="questionForm" action="">
+            <form id="questionForm" action="{{ route('soal-11') }}">
                 <div class="question-sec">
                     <h2 class="question-sec-title">Nyeri Dada Menjalar Punggung Leher Bahu dan Epigastrium</h2>
                 </div>

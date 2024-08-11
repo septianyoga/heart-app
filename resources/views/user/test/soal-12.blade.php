@@ -3,7 +3,7 @@
     <!-- Homepage2 Details Section Start -->
     <section id="test-sec">
         <div class="test-first-sec">
-            <form id="questionForm" action="">
+            <form id="questionForm" action="{{ route('test-page-result') }}">
                 <div class="question-sec">
                     <h2 class="question-sec-title">Mudah Lelah</h2>
                 </div>
