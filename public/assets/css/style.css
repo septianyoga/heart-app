@@ -4235,16 +4235,14 @@ input.custom-wallet-input {
 }
 
 .notification-img {
-    width: 150px;
+    width: 100px;
     height: 100px;
-    overflow: hidden;
 }
 
 .notification-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     border-radius: 8px;
 }
 

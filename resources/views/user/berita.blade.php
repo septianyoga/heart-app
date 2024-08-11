@@ -22,7 +22,7 @@
                 <div class="notification-page-full mt-24">
                     <h1 class="d-none">Notification Page</h1>
                     {{--  Foreach  --}}
-                    <a href="home-page1.html">
+                    <a href="{{ route('detail-berita') }}">
                         <div class="notification-page-sec">
                             <div class="notification-img">
                                 <img src="{{ asset('assets/image-new/jantung.jpeg') }}" alt="notification-img">
