@@ -4,7 +4,7 @@
 		<!-- Homepage2 Details Section Start -->
 		<section id="test-sec">
 			<div class="test-first-sec">
-				<form id="questionForm" action="">
+				<form id="questionForm" action="{{ route('soal-5') }}">
 					<div class="question-sec">
 						<h2 class="question-sec-title">Perokok</h2>
 					</div>
