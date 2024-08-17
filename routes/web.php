@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,8 +19,6 @@ Route::middleware('guest')->group(function () {
     })->name('on-screen-3');
     Route::get('/login', [AuthController::class, 'index'])->name('login');
     Route::post('/login', [AuthController::class, 'authenticate']);
-
-
 });
 
 Route::get('/register', [AuthController::class, 'create'])->name('register');
@@ -47,64 +48,27 @@ Route::middleware('auth')->group(function () {
         // Home Page & Berita & Detail Berita
 
         // Test Page & Test Result
-        Route::get('/test-page', function () {
-            return view('user.test-page');
-        })->name('test-page');
+        Route::get('/test-page', [TestController::class, 'index'])->name('test-page');
 
-        Route::get('/test-page-result', function () {
-            return view('user.test-page-result');
-        })->name('test-page-result');
+        // init id start soal
+        Route::get('/start', [TestController::class, 'start'])->name('start');
+
+        // Soal
+        Route::get('/soal-1/{test}', [TestController::class, 'soal_1'])->name('soal-1');
+        Route::get('/soal-2/{test}', [TestController::class, 'soal_2'])->name('soal-2');
+        Route::get('/soal-3/{test}', [TestController::class, 'soal_3'])->name('soal-3');
+        Route::get('/soal-4/{test}', [TestController::class, 'soal_4'])->name('soal-4');
+        Route::get('/soal-5/{test}', [TestController::class, 'soal_5'])->name('soal-5');
+        Route::get('/soal-6/{test}', [TestController::class, 'soal_6'])->name('soal-6');
+        Route::get('/soal-7/{test}', [TestController::class, 'soal_7'])->name('soal-7');
+        Route::get('/soal-8/{test}', [TestController::class, 'soal_8'])->name('soal-8');
+        Route::get('/soal-9/{test}', [TestController::class, 'soal_9'])->name('soal-9');
+        Route::get('/soal-10/{test}', [TestController::class, 'soal_10'])->name('soal-10');
+        Route::get('/soal-11/{test}', [TestController::class, 'soal_11'])->name('soal-11');
+        Route::get('/soal-12/{test}', [TestController::class, 'soal_12'])->name('soal-12');
+
         // Test Page & Test Result
-
-        // Soal
-        Route::get('/soal-1', function () {
-            return view('user.test.soal-1');
-        })->name('soal-1');
-
-        Route::get('/soal-2', function () {
-            return view('user.test.soal-2');
-        })->name('soal-2');
-
-        Route::get('/soal-3', function () {
-            return view('user.test.soal-3');
-        })->name('soal-3');
-
-        Route::get('/soal-4', function () {
-            return view('user.test.soal-4');
-        })->name('soal-4');
-
-        Route::get('/soal-5', function () {
-            return view('user.test.soal-5');
-        })->name('soal-5');
-
-        Route::get('/soal-6', function () {
-            return view('user.test.soal-6');
-        })->name('soal-6');
-
-        Route::get('/soal-7', function () {
-            return view('user.test.soal-7');
-        })->name('soal-7');
-
-        Route::get('/soal-8', function () {
-            return view('user.test.soal-8');
-        })->name('soal-8');
-
-        Route::get('/soal-9', function () {
-            return view('user.test.soal-9');
-        })->name('soal-9');
-
-        Route::get('/soal-10', function () {
-            return view('user.test.soal-10');
-        })->name('soal-10');
-
-        Route::get('/soal-11', function () {
-            return view('user.test.soal-11');
-        })->name('soal-11');
-
-        Route::get('/soal-12', function () {
-            return view('user.test.soal-12');
-        })->name('soal-12');
-        // Soal
+        Route::get('/test-page-result/{test}', [TestController::class, 'result'])->name('test-page-result');
 
         // Antrian
         Route::get('/antrian', function () {
@@ -113,22 +77,17 @@ Route::middleware('auth')->group(function () {
         // Antrian
 
         // Riwayat
-        Route::get('/riwayat', function () {
-            return view('user.riwayat');
-        })->name('riwayat');
+        Route::get('/riwayat', [HistoryController::class, 'index'])->name('riwayat');
         Route::get('/test-detail', function () {
             return view('user.test-detail');
         })->name('test-detail');
         // Riwayat
 
         // Profile
-        Route::get('/profile', function () {
-            return view('user.profile');
-        })->name('profile');
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+        Route::post('/profile', [ProfileController::class, 'store']);
         // Profile
     });
 });
 
 Route::get('/logout', [AuthController::class, 'destroy'])->name('logout');
-
-

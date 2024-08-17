@@ -32,9 +32,9 @@
                 </div>
 
                 <div class="profile-details-sec">
-                    <h3 class="pro-txt1">Iqbal Nuryaman</h3>
-                    <h4 class="pro-txt2">nuryamaniqbal@gmail.com</h4>
-                    <h5 class="pro-txt3">+6218378236137</h5>
+                    <h3 class="pro-txt1">{{ $user->name }}</h3>
+                    <h4 class="pro-txt2">{{ $user->email }}</h4>
+                    <h5 class="pro-txt3">{{ $user->no_hp }}</h5>
                     <div class="btn-logout">
                         <a href="{{ route('logout') }}">
                             <span>Logout</span>
@@ -51,45 +51,58 @@
         </div>
         <div id="profile-second-sec">
             <div class="container">
-                <form action="">
+                <form action="" method="POST">
+                    @csrf
                     <div class="profile-second-sec">
                         <div class="form-sec mb-3">
                             <label class="txt-lbl">NIK</label><br>
-                            <input type="nik" id="nik" nik="nik" placeholder="NIK in here" class="txt-input"
-                                value="12178237263726">
+                            <input type="nik" id="nik" name="nik" placeholder="NIK in here" class="txt-input"
+                                value="{{ $user->nik }}">
                             <div class="form_bottom_boder"></div>
+                            @error('nik')
+                                <div class="form_bottom_boder text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="profile-second-sec">
                         <div class="form-sec mb-3">
                             <label class="txt-lbl">Nama Lengkap</label><br>
                             <input type="name" id="name" name="name" placeholder="Name in here" class="txt-input"
-                                value="Iqbal Nuryaman">
+                                value="{{ $user->name }}">
                             <div class="form_bottom_boder"></div>
+                            @error('name')
+                                <div class="form_bottom_boder text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="profile-second-sec">
                         <div class="form-sec mb-3">
                             <label class="txt-lbl">No Telepon</label><br>
-                            <input type="no_telepon" id="no_telepon" name="no_telepon" placeholder="No Telepon in here"
-                                class="txt-input" value="+6218378236137">
+                            <input type="no_telepon" id="no_telepon" name="no_hp" placeholder="No Telepon in here"
+                                class="txt-input" value="{{ $user->no_hp }}">
                             <div class="form_bottom_boder"></div>
+                            @error('no_hp')
+                                <div class="form_bottom_boder text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="profile-second-sec">
                         <div class="form-sec mb-3">
                             <label class="txt-lbl">Email</label><br>
                             <input type="email" id="email" name="email" placeholder="Email in here"
-                                value="nuryamaniqbal@gmail.com" class="txt-input">
+                                value="{{ $user->email }}" class="txt-input">
                             <div class="form_bottom_boder"></div>
+                            @error('email')
+                                <div class="form_bottom_boder text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <!-- If Else -->
                     <div class="profile-second-sec">
                         <div class="form-sec mb-3">
                             <label class="txt-lbl">Nomor BPJS</label><br>
-                            <input type="text" inputmode="numeric" id="no_bpjs" name="no_bpjs" value="12178237263726"
-                                placeholder="Nomor BPJS in here" class="txt-input">
+                            <input type="text" inputmode="numeric" id="no_bpjs" name="no_bpjs"
+                                value="{{ $user->no_bpjs }}" placeholder="Nomor BPJS in here" class="txt-input">
                             <div class="form_bottom_boder"></div>
                         </div>
                     </div>

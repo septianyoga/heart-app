@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <div class="site_content">
         @include('user.components.preloader')
 
@@ -26,7 +27,12 @@
         @yield('content')
         <!-- Homepage2 Details Section End -->
 
-        @if (request()->routeIs('home') || request()->routeIs('test-page') || request()->routeIs('antrian') || request()->routeIs('riwayat') || request()->routeIs('test-detail') || request()->routeIs('profile'))
+        @if (request()->routeIs('home') ||
+                request()->routeIs('test-page') ||
+                request()->routeIs('antrian') ||
+                request()->routeIs('riwayat') ||
+                request()->routeIs('test-detail') ||
+                request()->routeIs('profile'))
             @include('user.components.menu-bottom')
         @endif
 

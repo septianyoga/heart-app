@@ -30,7 +30,7 @@
                 </video>
             </div>
             <div class="tutorial-btn">
-                <a href="{{ route('soal-1') }}">Mulai</a>
+                <a href="{{ route('start') }}">Mulai</a>
             </div>
         </div>
 

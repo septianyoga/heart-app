@@ -19,6 +19,8 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <div class="site_content">
         @include('user.components.preloader')
 

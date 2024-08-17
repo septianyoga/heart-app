@@ -89,31 +89,35 @@
                                             class="form-control search-text">
                                     </div>
                                 </div>
-                                <a href="{{ route('test-detail') }}">
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <div class="text-start">
-                                                        <p class="test-title-danger">19<span>pt</span></p>
+                                @foreach ($tests as $test)
+                                    <a href="{{ route('test-detail') }}">
+                                        <div class="card mb-3">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="text-start">
+                                                            <p class="test-title-danger">19<span>pt</span></p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="d-flex justify-content-center align-items-center">
-                                                        <div class="danger me-2"></div>
-                                                        <p class="test-subtitle">High Risk</p>
+                                                    <div class="col">
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <div class="danger me-2"></div>
+                                                            <p class="test-subtitle">High Risk</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="text-end">
-                                                        <p class="test-subtitle-date">8 Agustus 2024</p>
-                                                        <p class="test-subtitle-date">5.00 PM</p>
+                                                    <div class="col">
+                                                        <div class="text-end">
+                                                            <p class="test-subtitle-date">
+                                                                {{ date('d F Y', strtotime($test->created_at)) }}</p>
+                                                            <p class="test-subtitle-date">
+                                                                {{ date('H:i', strtotime($test->created_at)) }}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                @endforeach
                                 <div class="card mb-3">
                                     <div class="card-body">
                                         <div class="row">
