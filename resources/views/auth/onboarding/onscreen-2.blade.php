@@ -1,7 +1,7 @@
 @extends('auth.onboarding.layout', ['title' => 'Heart App - OnScreen'])
 
 @section('content')
-    <div class="Onboarding-Screen-1-full">
+    <div class="container Onboarding-Screen-1-full">
         <div class="main-header">
         </div>
         <div class="skip_btn_1 skip_btn">
@@ -14,8 +14,8 @@
             <h1>Track Your Heartbeat</h1>
             <p>Easily monitor your heart rate and keep a record of your daily measurements.</p>
         </div>
-        <div class="d-flex justify-content-between align-items-center" style="margin-top: 60px;">
-            <div class="btn-1">
+        <div class="d-flex justify-content-evenly align-items-center" style="margin-top: 60px;">
+            <div class="btn-1 mb-3">
                 <a href="{{ route('on-screen-1') }}" class=""><svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -24,7 +24,7 @@
                     Back
                 </a>
             </div>
-            <div class="btn-1">
+            <div class="btn-1 mb-3">
                 <a href="{{ route('on-screen-3') }}">
                     Next
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"

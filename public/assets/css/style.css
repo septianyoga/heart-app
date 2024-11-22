@@ -257,7 +257,7 @@ input[type=number] {
 }
 
 /************************ 3.Splashscreen-index ***************************/
-#splashscreen {
+/* #splashscreen {
     background-color: #FB0865;
     background-repeat: no-repeat;
     background-position: center;
@@ -265,7 +265,7 @@ input[type=number] {
     max-width: 100%;
     position: relative;
     height: 100vh;
-}
+} */
 
 .logo_details h1 {
     font-family: 'Poppins';
@@ -305,7 +305,7 @@ input[type=number] {
     width: 345px;
     border: none;
     height: 48px;
-    background: #FB0865;
+    background: #5FC613;
     border-radius: 8px;
     display: flex;
     -webkit-box-align: center;
@@ -441,7 +441,7 @@ input[type=number] {
 }
 
 .Onboarding-Screen-1 {
-    background: #F90965;
+    background: #5FC613;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -758,7 +758,7 @@ p.time {
 }
 
 .top-navbar {
-    background: #F90965;
+    background: #5FC613;
 }
 
 .time1 {
@@ -1659,7 +1659,7 @@ span.cart-item {
 }
 
 .search-iconn svg path {
-    fill: #F90965;
+    fill: #000000;
 }
 
 .search-iconn:focus-visible,
@@ -1980,7 +1980,7 @@ span.cart-item {
     border: none;
     border-radius: 100%;
     text-indent: -9999px;
-    border: 2px solid #F90965;
+    border: 2px solid #5FC613;
     background: white;
 }
 
@@ -2001,7 +2001,7 @@ span.cart-item {
 }
 
 .prodcut-sec-slide .slick-dots li.slick-active button {
-    background: #F90965;
+    background: #5FC613;
     border-radius: 5px;
     width: 20px;
     height: 10px;
@@ -2842,11 +2842,13 @@ video.review-play-video {
 .profile-img-sec {
     position: relative;
 }
-.profile-img-box{
-   width: 150px;
-   height: 150px;
-   overflow: hidden;
+
+.profile-img-box {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
 }
+
 .profile-img-box .profile-img {
     border-radius: 10px;
     width: 100%;
@@ -2951,6 +2953,7 @@ video.review-play-video {
 
 .Onboarding-Screen-1-full {
     height: 100%;
+    background: #5FC613;
 }
 
 .Onboarding-Screen-1-full .img {
@@ -2962,7 +2965,7 @@ video.review-play-video {
 .btn-1 a {
     padding: 15px;
     border-radius: 15px;
-    background: #FFB74D;
+    background: #1A5FB4;
     color: #FFFFFF;
     font-family: 'Poppins';
     font-style: normal;
@@ -2975,7 +2978,7 @@ video.review-play-video {
 }
 
 .btn-1 a:hover {
-    background: #ec8f04;
+    background: #1A5FB4;
 }
 
 /************************ 21.Checkoutpage Screen  ***************************/
@@ -4621,7 +4624,7 @@ a.event-icon {
     left: -10px;
     right: 0px;
     border-radius: 50%;
-    background: #F90965;
+    background: #5FC613;
     border: 2px solid #ffffff;
     -webkit-box-shadow: 0px 4px 4px rgba(255, 226, 218, 0.32);
     box-shadow: 0px 4px 4px rgba(255, 226, 218, 0.32);
@@ -4629,20 +4632,20 @@ a.event-icon {
 
 .sc-nav-indicator:hover {
     background: #ffffff;
-    border: 2px solid #F90965;
+    border: 2px solid #5FC613;
 }
 
 .sc-nav-indicator.active {
     background: #ffffff;
-    border: 2px solid #F90965;
+    border: 2px solid #5FC613;
 }
 
 .sc-nav-indicator:hover svg path {
-    fill: #F90965;
+    fill: #5FC613;
 }
 
 .sc-nav-indicator.active svg path {
-    fill: #F90965;
+    fill: #5FC613;
 }
 
 .sc-nav-indicator svg {
@@ -4665,11 +4668,11 @@ a.event-icon {
 }
 
 .sc-nav-indicator.active .nav-menu-title-bottom {
-    color: #F90965;
+    color: #5FC613;
 }
 
 .sc-nav-indicator:hover .nav-menu-title-bottom {
-    color: #F90965;
+    color: #5FC613;
 }
 
 #favourite-page {
@@ -5911,7 +5914,7 @@ a.addhome-btn {
     height: 8px;
     width: 8px;
     border-radius: 100%;
-    background: #F90965;
+    background: #5FC613;
     transform: translateY(8%);
     -moz-transform: scale(0, 0);
     -ms-transform: scale(0, 0);
@@ -5934,7 +5937,7 @@ a.addhome-btn {
     height: 8px;
     width: 8px;
     border-radius: 100%;
-    background: #F90965;
+    background: #5FC613;
     transform: translateY(8%);
     -moz-transform: scale(0, 0);
     -ms-transform: scale(0, 0);
@@ -5956,11 +5959,11 @@ a.addhome-btn {
 }
 
 .nav-menu-icon.active .nav-menu-title {
-    color: #F90965;
+    color: #5FC613;
 }
 
 .nav-menu-icon:hover .nav-menu-title {
-    color: #F90965;
+    color: #5FC613;
 }
 
 .language-sel .curr-icon path {
@@ -5972,7 +5975,7 @@ a.addhome-btn {
 }
 
 .block-footer a:hover {
-    color: #F90965;
+    color: #5FC613;
 }
 
 .event-icon.navigation-icons.active:after,
@@ -5987,11 +5990,11 @@ a.addhome-btn {
 }
 
 .nav-menu-icon:hover svg path {
-    stroke: #F90965;
+    stroke: #5FC613;
 }
 
 .nav-menu-icon.active svg path {
-    stroke: #F90965;
+    stroke: #5FC613;
 }
 
 .custom-offcanvas-noti {
@@ -6095,7 +6098,7 @@ nav#top-navbar {
     width: 50px;
     height: 50px;
     font-size: 0;
-    color: #F90965;
+    color: #1A5FB4;
     display: inline-block;
     margin: -25px 0 0 -25px;
     text-indent: -9999em;
@@ -6105,7 +6108,7 @@ nav#top-navbar {
 }
 
 .loader div {
-    background-color: #F90965;
+    background-color: #5FC613;
     display: inline-block;
     float: none;
     position: absolute;
@@ -6310,13 +6313,14 @@ ul.input.date-picker-input {
 
 #sign-in-screen .logo-img {
     text-align: center;
+    margin-top: 20px;
     /* background-color: #f9090d;
     padding: 0px 30px 10px 30px;
     border-radius: 0px 0px 20px 20px; */
 }
 
 .homepage2-first-sec {
-    background-color: #F90965;
+    background-color: #1A5FB4;
     padding: 10px;
     /* display: flex;
     align-items: start; */
@@ -6398,16 +6402,16 @@ ul.input.date-picker-input {
     font-weight: 600;
     font-size: 14px;
     line-height: 24px;
-    color: #F90965;
-    background: #ffffff;
+    color: #fff;
+    background: #1A5FB4;
     border-radius: 8px;
     text-decoration: none;
 }
 
 .test-first-sec .tutorial-btn a:hover {
-    color: #fffcfd;
-    background: #F90965;
-    border: 2px solid #fffcfd;
+    color: #1A5FB4;
+    background: #5FC613;
+    border: 2px solid #1A5FB4;
 }
 
 .test-first-sec .tutorial-btn-que {
@@ -6750,6 +6754,7 @@ ul.input.date-picker-input {
     background-color: rgba(249, 9, 101, 0.5);
 
 }
+
 .answer-test-title {
     font-family: 'Poppins';
     font-style: normal;
@@ -6778,6 +6783,7 @@ ul.input.date-picker-input {
     border: 2px solid #F90965;
     color: #fff;
 }
+
 .btn-logout:hover {
     border: 2px solid #F90965;
     background-color: #ffffff;
@@ -6786,6 +6792,7 @@ ul.input.date-picker-input {
 .btn-logout:hover a {
     color: #F90965;
 }
+
 .btn-logout a {
     font-size: 16px;
     color: #fff;
@@ -6793,3 +6800,16 @@ ul.input.date-picker-input {
     font-family: 'Poppins';
     font-weight: 600;
 }
+
+.footer-icon.register {
+    width: 100%;
+    z-index: 1000;
+    margin-top: 60px;
+}
+.footer-icon.login {
+    width:100%;
+    z-index: 1000;
+    margin-top: 60px;
+}
+
+

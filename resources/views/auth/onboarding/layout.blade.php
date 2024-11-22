@@ -23,7 +23,7 @@
 		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 			<div class="first_slide">
 				<div class="Onboarding-Screen-1 slide1">
-					<div class="container">
+					<div class="">
 						@yield('content')
 					</div>
 				</div>

@@ -69,11 +69,11 @@
                             <label class="txt-lbl">Apakah ada BPJS?</label><br>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center me-3">
-                                    <input type="radio" name="bpjs" id="ya" onclick="toggleBPJSForm(true)">
+                                    <input type="radio" class="me-2" name="bpjs" id="ya" onclick="toggleBPJSForm(true)">
                                     <label for="ya" class="text-nowrap">Ya, Ada</label>
                                 </div>
                                 <div class="d-flex align-items-center">
-                                    <input type="radio" name="bpjs" id="tidak" onclick="toggleBPJSForm(false)">
+                                    <input type="radio" class="me-2" name="bpjs" id="tidak" onclick="toggleBPJSForm(false)">
                                     <label for="tidak" class="text-nowrap">Tidak ada</label>
                                 </div>
                             </div>
@@ -96,6 +96,11 @@
                         <p>Have an account? <a href="/login">Sign In</a></p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="footer-icon register d-flex justify-content-center align-items-center">
+            <div class="container">
+                <img src="{{ asset('assets/image-new/footer.png') }}" alt="" style="width: 100%">
             </div>
         </div>
     </section>

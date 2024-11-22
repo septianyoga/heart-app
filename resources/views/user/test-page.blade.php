@@ -14,7 +14,7 @@
     </header>
 
     <!-- Homepage2 Details Section Start -->
-    <section id="test-sec" style="background-color: #F90965; margin-bottom: -10px">
+    <section id="test-sec" style="background-color: #5FC613; margin-bottom: -10px">
         <div class="test-first-sec">
             <div class="tutorial-text">
                 <h1 class="tutorial-title">Yuk, Jawab beberapa pertanyaan berikut dan sebelumnya simak terlebih dahulu video

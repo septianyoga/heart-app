@@ -35,17 +35,16 @@
                             <button type="submit">Sign In</button>
                         </div>
                     </form>
-                    {{--  <div class="row remember-sec">
-                        <div class="col-6">
-                        </div>
-                        <div class="col-6 d-flex justify-content-end align-items-center">
-                            <a href="forget-password-screen.html" class="forget-btn">Forget password?</a>
-                        </div>
-                    </div>  --}}
                     <div class="block-footer">
                         <p>Don’t have an account? <a href="/register">Sign Up</a></p>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="footer-icon login d-flex justify-content-center align-items-center">
+            <div class="container">
+                <img src="{{ asset('assets/image-new/footer.png') }}" alt="" style="width: 100%">
             </div>
         </div>
     </section>
