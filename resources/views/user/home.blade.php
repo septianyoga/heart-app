@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="tranding-item-sec">
                     <div class="home-tranding-first">
-                        <h2 class="home-cate-title">Berita Terkini</h2>
+                        <h2 class="home-cate-title">Edukasi</h2>
                     </div>
                     <div class="home-tranding-second">
                         <a href="{{ route('berita') }}">

@@ -29,8 +29,37 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['middleware' => 'roleCheck:admin'], function () {
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            return view('admin.page.dashboard');
         })->name('dashboard');
+
+        Route::get('/chat', function () {
+            return view('admin.page.chat');
+        })->name('chat');
+
+        Route::get('/no-antrian', function () {
+            return view('admin.page.no-antrian');
+        })->name('no-antrian');
+
+        Route::get('/artikel', function () {
+            return view('admin.page.artikel');
+        })->name('artikel');
+
+        Route::get('/jadwal-dokter', function () {
+            return view('admin.page.jadwal-dokter');
+        })->name('jadwal-dokter');
+
+        Route::get('/tutorial-video', function () {
+            return view('admin.page.tutorial-video');
+        })->name('tutorial-video');
+
+        Route::get('/monitoring-antrian', function () {
+            return view('admin.page.monitoring-antrian');
+        })->name('monitoring-antrian');
+
+        Route::get('/test-manual', function () {
+            return view('admin.page.test-manual');
+        })->name('test-manual');
+
     });
 
     Route::group(['middleware' => 'roleCheck:user'], function () {
