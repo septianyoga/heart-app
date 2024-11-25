@@ -95,6 +95,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/soal-10/{test}', [TestController::class, 'soal_10'])->name('soal-10');
         Route::get('/soal-11/{test}', [TestController::class, 'soal_11'])->name('soal-11');
         Route::get('/soal-12/{test}', [TestController::class, 'soal_12'])->name('soal-12');
+        Route::get('/soal-13/{test}', [TestController::class, 'soal_13'])->name('soal-13');
 
         // Test Page & Test Result
         Route::get('/test-page-result/{test}', [TestController::class, 'result'])->name('test-page-result');

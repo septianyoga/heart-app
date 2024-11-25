@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->integer('age')->nullable();
-            $table->enum('gender', ['laki-laki', 'wanita'])->nullable();
+            $table->integer('gender')->nullable();
             $table->integer('soal_2')->nullable();
             $table->integer('soal_3')->nullable();
             $table->integer('soal_4')->nullable();
@@ -28,6 +28,9 @@ return new class extends Migration
             $table->integer('soal_10')->nullable();
             $table->integer('soal_11')->nullable();
             $table->integer('soal_12')->nullable();
+            $table->integer('soal_13')->nullable();
+            $table->enum('status', ['belum', 'sudah'])->default('belum');
+            $table->integer('score')->nullable();
             $table->timestamps();
         });
     }

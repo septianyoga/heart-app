@@ -96,13 +96,18 @@
                                                 <div class="row">
                                                     <div class="col-3">
                                                         <div class="text-start">
-                                                            <p class="test-title-danger">19<span>pt</span></p>
+                                                            <p
+                                                                class="test-title-{{ $test->score >= 12 ? 'danger' : 'safe' }}">
+                                                                {{ $test->score }}<span>pt</span></p>
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="d-flex justify-content-center align-items-center">
-                                                            <div class="danger me-2"></div>
-                                                            <p class="test-subtitle">High Risk</p>
+                                                            <div
+                                                                class="score-{{ $test->score >= 12 ? 'danger' : 'safe' }} me-2">
+                                                            </div>
+                                                            <p class="test-subtitle">
+                                                                {{ $test->score >= 12 ? 'High Risk' : 'Low Risk' }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col">
@@ -118,29 +123,6 @@
                                         </div>
                                     </a>
                                 @endforeach
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div class="text-start">
-                                                    <p class="test-title-safe">02<span>pt</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="d-flex justify-content-center align-items-center">
-                                                    <div class="safe me-2"></div>
-                                                    <p class="test-subtitle">Low Risk</p>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="text-end">
-                                                    <p class="test-subtitle-date">8 Agustus 2024</p>
-                                                    <p class="test-subtitle-date">5.00 PM</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

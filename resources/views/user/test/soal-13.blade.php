@@ -3,9 +3,9 @@
     <!-- Homepage2 Details Section Start -->
     <section id="test-sec">
         <div class="test-first-sec">
-            <form id="questionForm" action="{{ route('soal-13', ['test' => $test]) }}" method="GET">
+            <form id="questionForm" action="{{ route('test-page-result', ['test' => $test]) }}" method="GET">
                 <div class="question-sec">
-                    <h2 class="question-sec-title">Mudah Lelah</h2>
+                    <h2 class="question-sec-title">Nyeri epigastrium</h2>
                 </div>
                 <div class="answer-sec">
                     <div class="container">
