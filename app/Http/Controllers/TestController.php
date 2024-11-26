@@ -162,4 +162,10 @@ class TestController extends Controller
         ]);
         return view('user.test-page-result');
     }
+
+
+    // Test Manual Admin
+    public function testManual(){
+        return view('admin.page.test-manual');
+    }
 }
