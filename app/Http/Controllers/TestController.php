@@ -204,4 +204,10 @@ class TestController extends Controller
             'test' => $test
         ]);
     }
+
+
+    // Test Manual Admin
+    public function testManual(){
+        return view('admin.page.test-manual');
+    }
 }

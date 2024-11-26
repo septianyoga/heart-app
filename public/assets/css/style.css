@@ -1748,6 +1748,7 @@ span.cart-item {
     padding: 0;
     max-width: 100%;
     border: 1px solid #7f7f7f;
+    overflow-y: hidden;
 }
 
 .antrian-content-sec {
@@ -1783,7 +1784,7 @@ span.cart-item {
 }
 
 .antrian-img-sec {
-    width: 100%;
+    width: 200px;
     height: 200px;
     overflow: hidden;
 }

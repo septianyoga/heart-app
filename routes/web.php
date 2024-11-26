@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
+use App\Models\Antrian;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,19 +31,26 @@ Route::post('/register', [AuthController::class, 'store']);
 Route::middleware('auth')->group(function () {
 
     Route::group(['middleware' => 'roleCheck:admin'], function () {
-        Route::get('/dashboard', function () {
-            return view('admin.page.dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('/chat', function () {
             return view('admin.page.chat');
         })->name('chat');
 
-        Route::get('/no-antrian', function () {
-            return view('admin.page.no-antrian');
-        })->name('no-antrian');
+        Route::group(['prefix' => 'antrian'], function () {
+            Route::get('/no-antrian', [AntrianController::class, 'index'])->name('no-antrian');
+            Route::get('/add-no-antrian', [AntrianController::class, 'create'])->name('add-no-antrian');
+            Route::get('/edit-no-antrian/{id}', [AntrianController::class, 'edit'])->name('edit-no-antrian');
+
+            // Post Update Delete
+            Route::post('/post-no-antrian', [AntrianController::class, 'store'])->name('post-no-antrian');
+            Route::post('/update-no-antrian/{id}', [AntrianController::class, 'update'])->name('update-no-antrian');
+            Route::post('/delete-no-antrian/{id}', [AntrianController::class, 'destroy'])->name('delete-no-antrian');
+
+        });
 
         Route::get('/artikel', function () {
+
             return view('admin.page.artikel');
         })->name('artikel');
 
@@ -48,18 +58,22 @@ Route::middleware('auth')->group(function () {
             return view('admin.page.jadwal-dokter');
         })->name('jadwal-dokter');
 
-        Route::get('/tutorial-video', function () {
-            return view('admin.page.tutorial-video');
-        })->name('tutorial-video');
+        Route::get('/tutorial-video', [
+            function () {
+                return view('admin.page.tutorial-video');
+            }
+        ])->name('tutorial-video');
 
-        Route::get('/monitoring-antrian', function () {
-            return view('admin.page.monitoring-antrian');
-        })->name('monitoring-antrian');
 
-        Route::get('/test-manual', function () {
-            return view('admin.page.test-manual');
-        })->name('test-manual');
+        Route::group(['prefix' => 'monitoring'], function () {
+            Route::get('/monitoring-antrian', [AntrianController::class, 'monitoring'])->name('monitoring-antrian');
 
+        });
+
+        Route::group(['prefix' => 'test'], function () {
+            Route::get('/test-manual', [TestController::class, 'testManual'])->name('test-manual');
+
+        });
     });
 
     Route::group(['middleware' => 'roleCheck:user'], function () {
@@ -101,9 +115,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/test-page-result/{test}', [TestController::class, 'result'])->name('test-page-result');
 
         // Antrian
-        Route::get('/antrian', function () {
-            return view('user.antrian');
-        })->name('antrian');
+        Route::get('/antrian', [AntrianController::class, 'antrian'])->name('antrian');
         // Antrian
 
         // Riwayat

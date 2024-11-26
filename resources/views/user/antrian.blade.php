@@ -32,22 +32,23 @@
                     </div>
                 </div>
                 <div class="antrian-sec">
-                    <div class="antrian-sec-slide-full">
-                        <div class="antrian-img-sec">
-                            <img src="{{ asset('assets/image-new/number.jpg') }}" alt="">
-                        </div>
-                        {{--  Foreach  --}}
-                        <div class="antrian-content-sec">
-                            <div class="antrian-content-sec-full">
-                                <h3 class="slider-pro-title-nomor-antrian text-center mt-2">Antrian</h3>
-                                <h3 class="slider-pro-title-nomor-antrian text-center">Nomor 1</h3>
-                                <div class="btn-antrian">
-                                    <a class="btn-antrian-btn" href="#">Ambil Antrian</a>
+                    @foreach ($antrian as $antrians)
+                        <div class="antrian-sec-slide-full">
+                            <div class="antrian-img-sec">
+                                <img src="{{ asset('images/number/' . $antrians->foto) }}" alt="">
+                            </div>
+                            <div class="antrian-content-sec">
+                                <div class="antrian-content-sec-full">
+                                    <h3 class="slider-pro-title-nomor-antrian text-center mt-2">Antrian</h3>
+                                    <h3 class="slider-pro-title-nomor-antrian text-center">Nomor {{ $antrians->no_antrian }}
+                                    </h3>
+                                    <div class="btn-antrian">
+                                        <a class="btn-antrian-btn" href="#">Ambil Antrian</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {{--  Foreach  --}}
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
