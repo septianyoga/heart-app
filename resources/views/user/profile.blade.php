@@ -37,7 +37,7 @@
                     <h5 class="pro-txt3">{{ $user->no_hp }}</h5>
                     <div class="btn-logout">
                         <a href="{{ route('logout') }}">
-                            <span>Logout</span>
+                            <span class="me-2 mt-1">Logout</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-power" viewBox="0 0 16 16">
                                 <path d="M7.5 1v7h1V1z" />

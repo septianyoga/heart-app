@@ -11,11 +11,10 @@
                             <rect width="24" height="24" fill="white" />
                         </mask>
                         <g mask="url(#mask0_1_5195)">
-                            <path d="M15 18L9 12L15 6" stroke="#F90965" stroke-width="2" stroke-linecap="round"
+                            <path d="M15 18L9 12L15 6" stroke="#00930c" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </g>
                     </svg>
-
                 </button>
                 <div class="progress-bar">
                     <div class="progress"></div>
@@ -28,7 +27,7 @@
                             <rect width="24" height="24" fill="white" />
                         </mask>
                         <g mask="url(#mask0_1_409)">
-                            <path d="M9 18L15 12L9 6" stroke="#F90965" stroke-width="2" stroke-linecap="round"
+                            <path d="M9 18L15 12L9 6" stroke="#00930c" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </g>
                     </svg>
