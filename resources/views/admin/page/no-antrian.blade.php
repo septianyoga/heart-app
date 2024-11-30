@@ -9,7 +9,7 @@
                         <div class="text-end">
                             <a href="{{ route('add-no-antrian') }}" class="btn btn-secondary">Tambah Data</a>
                         </div>
-                        <table id="dataTableExample" class="table table-striped table-bordered border-black">
+                        <table id="dataTableExample" class="table table-striped table-bordered border-secondary">
                             <thead>
                                 <tr>
                                     <th class="text-center">Nomor Antrian</th>

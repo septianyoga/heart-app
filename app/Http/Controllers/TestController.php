@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Test;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -14,8 +15,10 @@ class TestController extends Controller
      */
     public function index()
     {
-        //
-        return view('user.test-page');
+        $data =[
+            'video' => Video::first()
+        ];
+        return view('user.test-page', $data);
     }
 
     public function start()

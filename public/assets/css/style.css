@@ -1761,7 +1761,7 @@ span.cart-item {
     padding: 5px 0;
     margin: 30px 0 0 0;
     border-radius: 15px;
-    background-color: #F90965;
+    background-color: #00930c;
     color: #fff;
 }
 
@@ -1803,7 +1803,7 @@ span.cart-item {
     font-weight: 600;
     font-size: 36px;
     line-height: 24px;
-    color: #F90965;
+    color: #f90909;
 }
 
 .test-title-safe {
@@ -1856,7 +1856,7 @@ span.cart-item {
 .danger {
     padding: 5px;
     border-radius: 50%;
-    background-color: #F90965;
+    background-color: #f90909;
 }
 
 .safe {
@@ -1877,7 +1877,7 @@ span.cart-item {
     padding: 5px 0;
     margin: 30px 0 0 0;
     border-radius: 15px;
-    background-color: #F90965;
+    background-color: #00930c;
     color: #fff;
 }
 
@@ -2864,7 +2864,7 @@ video.review-play-video {
 .gallay-icon {
     width: 40px;
     height: 40px;
-    background: #0EA5E9;
+    background: #00930c;
     border-radius: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5339,7 +5339,7 @@ a.product2-readmore.rotate-icon img {
     justify-content: center;
     padding: 10px;
     background: #FFFFFF;
-    border: 2px solid #F90965;
+    border: 2px solid #00930c;
     border-radius: 60px;
     position: absolute;
     bottom: -25%;
@@ -5429,7 +5429,7 @@ a.product2-readmore.rotate-icon img {
     bottom: 0;
     padding-bottom: 16px;
     left: 0;
-    background: #F90965;
+    background: #00930c;
 }
 
 #payment-success-first {
@@ -6429,15 +6429,15 @@ ul.input.date-picker-input {
     font-size: 14px;
     line-height: 24px;
     color: #ffffff;
-    background: #F90965;
+    background: #00930c;
     border-radius: 8px;
     border: none;
 }
 
 .test-first-sec .tutorial-btn-que button:hover {
-    color: #F90965;
+    color: #00930c;
     background: #ffffff;
-    border: 2px solid #F90965;
+    border: 2px solid #00930c;
 }
 
 .test-char {
@@ -6471,7 +6471,7 @@ ul.input.date-picker-input {
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #F90965;
+    color: #00930c;
     margin-bottom: 5px;
 }
 
@@ -6487,7 +6487,7 @@ ul.input.date-picker-input {
 .progress {
     width: 10%;
     height: 100%;
-    background-color: #F90965;
+    background-color: #00930c;
     border-radius: 10px;
 }
 
@@ -6497,7 +6497,7 @@ ul.input.date-picker-input {
     line-height: 24px;
     font-weight: 600;
     font-style: normal;
-    color: #F90965;
+    color: #00930c;
 }
 
 .test-first-sec .question-sec {
@@ -6529,7 +6529,7 @@ ul.input.date-picker-input {
 }
 
 .age-answer .btn {
-    background-color: #F90965;
+    background-color: #00930c;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -6557,7 +6557,7 @@ ul.input.date-picker-input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #F90965;
+    border: 2px solid #00930c;
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
@@ -6581,10 +6581,10 @@ ul.input.date-picker-input {
 
 .gender-option span {
     font-family: 'Poppins';
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     font-size: 18px;
-    color: #F90965;
+    color: #000000;
 }
 
 .gender-option input:checked+.gender-icon {
@@ -6596,7 +6596,7 @@ ul.input.date-picker-input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #F90965;
+    background-color: #00930c;
     padding: 10px 150px;
     border-radius: 5px;
     cursor: pointer;
@@ -6606,7 +6606,7 @@ ul.input.date-picker-input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #F90965;
+    border: 2px solid #00930c;
     padding: 10px 150px;
     border-radius: 5px;
     cursor: pointer;
@@ -6643,7 +6643,7 @@ ul.input.date-picker-input {
     font-weight: 500;
     font-style: normal;
     font-size: 18px;
-    color: #F90965;
+    color: #00930c;
 }
 
 .test-detail .score {
@@ -6776,22 +6776,22 @@ ul.input.date-picker-input {
 
 .btn-logout {
     text-align: center;
-    width: 60%;
+    width: 100%;
     padding: 5px;
     margin: 30px 0 0 0;
     border-radius: 15px;
-    background-color: #F90965;
-    border: 2px solid #F90965;
+    background-color: #00930c;
+    border: 2px solid #00930c;
     color: #fff;
 }
 
 .btn-logout:hover {
-    border: 2px solid #F90965;
+    border: 2px solid #00930c;
     background-color: #ffffff;
 }
 
 .btn-logout:hover a {
-    color: #F90965;
+    color: #00930c;
 }
 
 .btn-logout a {

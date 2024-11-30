@@ -22,15 +22,14 @@
         <div class="homepage-fifth-sec">
             <div class="container">
                 <div class="img-item-sec">
-                    <div class="img-news">
-                        <img src="{{ asset('assets/image-new/jantung-1.jpg') }}" alt="">
+                    <div class="img-news mt-4">
+                        <img src="{{ asset('/images/artikel/' . $artikel->foto) }}" alt="">
                     </div>
-                    <div class="content-desc">
-                        <h1>Jantung Koroner</h1>
-                        <p>13 Juli 2023</p>
-                        <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo veniam itaque eveniet
-                            illum consectetur in amet quidem mollitia. Voluptates laudantium iste veritatis placeat
-                            fuga eum porro, non facilis. Quasi, nisi.
+                    <div class="content-desc mt-3">
+                        <h1 class="mb-2">{{ $artikel->judul }}</h1>
+                        <p>{{ \Carbon\Carbon::parse($artikel->created_at)->translatedFormat('d F Y') }}</p>
+                        <h6>
+                            {{ $artikel->isi  }}
                         </h6>
                     </div>
                 </div>

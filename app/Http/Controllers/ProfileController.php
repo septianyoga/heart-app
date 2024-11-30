@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProfileRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller
@@ -77,5 +78,33 @@ class ProfileController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    // Admin
+    public function profileAdmin()
+    {
+        return view('admin.page.ganti-password');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        // Memeriksa password lama yang dimasukkan
+        if (!Hash::check($request->current_password, Auth::user()->password)) {
+            return back()->withErrors(['current_password' => 'Password lama salah.']);
+        }
+
+        // Update password
+        User::find(Auth::user()->id)->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+        Alert::success('Success', 'Password Berhasil Diubah');
+        return redirect()->back();
     }
 }

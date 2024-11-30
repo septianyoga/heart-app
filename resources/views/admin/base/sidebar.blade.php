@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            Noble<span>UI</span>
+            Heart<span style="color: #00930c">App</span>
         </a>
         <div class="sidebar-toggler">
             <span></span>
@@ -13,7 +13,7 @@
         <ul class="nav" id="sidebarNav">
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
-                <a href=".{{ route('dashboard') }}" class="nav-link">
+                <a href="{{ route('dashboard') }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Dashboard</span>
                 </a>

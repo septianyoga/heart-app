@@ -1,6 +1,5 @@
 @extends('user.test.components.base-test', ['title' => 'Soal 1'])
 @section('content-test')
-    <!-- Homepage2 Details Section Start -->
     <section id="test-sec" style="margin-bottom: -50px">
         <div class="test-first-sec">
             <form id="testForm" action="{{ route('soal-2', ['test' => $test]) }}" method="GET">
@@ -27,15 +26,15 @@
                             <label class="gender-option">
                                 <input type="radio" name="gender" value="wanita">
                                 <div class="gender-icon">
-                                    <img src="{{ asset('/') }}assets/image-new/icon/female-symbol.svg" alt="Wanita">
-                                    <span>WANITA</span>
+                                    <img src="{{ asset('/') }}assets/image-new/female.svg" alt="Wanita">
+                                    <span>Wanita</span>
                                 </div>
                             </label>
                             <label class="gender-option">
                                 <input type="radio" name="gender" value="laki-laki">
                                 <div class="gender-icon">
-                                    <img src="{{ asset('/') }}assets/image-new/icon/male-symbol.svg" alt="Laki-Laki">
-                                    <span>LAKI - LAKI</span>
+                                    <img src="{{ asset('/') }}assets/image-new/male.svg" alt="Laki-Laki">
+                                    <span>Laki - Laki</span>
                                 </div>
                             </label>
                         </div>
@@ -47,7 +46,6 @@
             </form>
         </div>
     </section>
-    <!-- Homepage2 Details Section End -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
