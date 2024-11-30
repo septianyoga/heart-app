@@ -4,7 +4,7 @@
                 <h4 class="mb-3 mb-md-0">{{ $title }}</h4>
             </div>
         <ul class="navbar-nav">
-            <li class="nav-item dropdown">
+            {{--  <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown"
                     role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i data-feather="bell"></i>
@@ -74,33 +74,32 @@
                         <a href="javascript:;">View all</a>
                     </div>
                 </div>
-            </li>
+            </li>  --}}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="w-30px h-30px ms-1 rounded-circle" src="https://via.placeholder.com/30x30"
+                    <img class="w-30px h-30px ms-1 rounded-circle" src="{{ asset('assets/image-new/programmer.svg') }}"
                         alt="profile">
                 </a>
                 <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
                     <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                         <div class="mb-3">
                             <img class="w-80px h-80px rounded-circle"
-                                src="https://via.placeholder.com/80x80" alt="">
+                                src="{{ asset('assets/image-new/programmer.svg') }}" alt="">
                         </div>
                         <div class="text-center">
                             <p class="fs-16px fw-bolder">Amiah Burton</p>
-                            <p class="fs-12px text-secondary">amiahburton@gmail.com</p>
                         </div>
                     </div>
                     <ul class="list-unstyled p-1">
                         <li class="dropdown-item py-2">
-                            <a href="javascript:;" class="text-body ms-0">
-                                <i class="me-2 icon-md" data-feather="edit"></i>
-                                <span>Edit Profile</span>
+                            <a href="{{ route('change-password') }}" class="text-body ms-0">
+                                <i class="me-2 icon-md" data-feather="lock"></i>
+                                <span>Ganti Password</span>
                             </a>
                         </li>
                         <li class="dropdown-item py-2">
-                            <a href="javascript:;" class="text-body ms-0">
+                            <a data-bs-toggle="modal" data-bs-target="#logoutButton" class="text-body ms-0" href="#">
                                 <i class="me-2 icon-md" data-feather="log-out"></i>
                                 <span>Log Out</span>
                             </a>
@@ -110,9 +109,31 @@
             </li>
         </ul>
 
+
         <a href="#" class="sidebar-toggler">
             <i data-feather="menu"></i>
         </a>
 
     </div>
 </nav>
+
+<div class="modal fade" id="logoutButton" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Keluar?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah Kamu Yakin Ingin Keluar?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Tutup</button>
+                        <a href="{{ route('logout') }}" class="btn btn-danger">Ya, Yakin</a>
+                    </div>
+                </div>
+            </div>
+        </div>

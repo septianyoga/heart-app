@@ -26,7 +26,7 @@
             </div>
             <div class="tutorial-test">
                 <video controls autoplay loop>
-                    <source src="{{ asset('assets/image-new/video/test-jantung-example.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('video/' . $video->video) }}" type="video/mp4">
                 </video>
             </div>
             <div class="tutorial-btn">

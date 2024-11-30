@@ -56,30 +56,45 @@
             <div class="container">
                 <h3 class="slider-pro-title-antrian text-center text-uppercase mb-3 mt-5">Jadwal Dokter</h3>
                 <div class="prodcut-sec-slide">
-                    {{--  Foreach  --}}
-                    <div class="prodcut-sec-slide-full" style="border: 1px solid #7f7f7f;">
-                        <div class="slider-img-sec">
-                            <img src="{{ asset('assets/image-new/user.jpg') }}" alt="">
-                        </div>
-                        <div class="slider-content-sec">
-                            <div class="slider-content-sec-full">
-                                <h3 class="slider-pro-title-dr mt-2">Dr. Iqbal</h3>
-                                <div class="jadwal mt-3 d-flex justify-content-start align-items-center">
-                                    <p class="slider-pro-subtitle me-3">08:00</p>
-                                    <div class="status">
-                                        <div class="sibuk me-2"></div>
+                    @foreach ($jadwal as $jadwals)
+                        <div class="prodcut-sec-slide-full">
+                            <div class="slider-img-sec">
+                                <img src="{{ asset('images/dokter/' . $jadwals->foto) }}" alt="">
+                            </div>
+                            <div class="slider-content-sec">
+                                <div class="slider-content-sec-full">
+                                    <h3 class="slider-pro-title">Dr. {{ $jadwals->nama_dokter }}</h3>
+                                    <div class="status mt-2">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            @if ($jadwals->sibuk == 1)
+                                                @if ($jadwals->kosong == 1)
+                                                    <div class="sibuk me-2"></div>
+                                                    <div class="kosong me-2"></div>
+                                                @else
+                                                    <div class="sibuk me-2"></div>
+                                                @endif
+                                            @elseif($jadwals->kosong == 1)
+                                                <div class="kosong me-2"></div>
+                                            @elseif($jadwals->sibuk == 0 && $jadwals->kosong == 0)
+                                                {{ null }}
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="jadwal mt-3 d-flex justify-content-start align-items-center">
-                                    <p class="slider-pro-subtitle me-3">16:00</p>
-                                    <div class="status">
-                                        <div class="kosong me-2"></div>
-                                    </div>
+                                    <h3 class="slider-pro-title mt-4">Jadwal Dokter</h3>
+                                    <p class="slider-pro-subtitle">
+                                        @if ($jadwals->hari_akhir == null)
+                                            {{ $jadwals->hari_awal }}
+                                        @else
+                                            {{ $jadwals->hari_awal }} - {{ $jadwals->hari_akhir }}
+                                        @endif
+                                    </p>
+                                    <p class="slider-pro-subtitle">
+                                        {{ \Carbon\Carbon::parse($jadwals->jam_awal)->format('H:i') }} -
+                                        {{ \Carbon\Carbon::parse($jadwals->jam_akhir)->format('H:i') }}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    {{--  Foreach  --}}
+                    @endforeach
                 </div>
                 <div class="card mt-3">
                     <div class="card-body">

@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\AntrianController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\VideoController;
 use App\Models\Antrian;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +35,8 @@ Route::post('/register', [AuthController::class, 'store']);
 Route::middleware('auth')->group(function () {
 
     Route::group(['middleware' => 'roleCheck:admin'], function () {
+        Route::get('/change-password', [ProfileController::class, 'profileAdmin'])->name('change-password');
+        Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('update-password');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('/chat', function () {
@@ -49,21 +55,38 @@ Route::middleware('auth')->group(function () {
 
         });
 
-        Route::get('/artikel', function () {
+        Route::group(['prefix' => 'artikel'], function () {
+            Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
+            Route::get('/add-artikel', [ArtikelController::class, 'create'])->name('add-artikel');
+            Route::get('/edit-artikel/{id}', [ArtikelController::class, 'edit'])->name('edit-artikel');
 
-            return view('admin.page.artikel');
-        })->name('artikel');
+            // Post
+            Route::post('/post-artikel', [ArtikelController::class, 'store'])->name('post-artikel');
+            Route::post('/update-artikel/{id}', [ArtikelController::class, 'update'])->name('update-artikel');
+            Route::post('/delete-artikel/{id}', [ArtikelController::class, 'destroy'])->name('delete-artikel');
+        });
+        Route::group(['prefix' => 'jadwal'], function () {
+            Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
+            Route::get('/add-jadwal-dokter', [JadwalController::class, 'create'])->name('add-jadwal-dokter');
+            Route::get('/edit-jadwal-dokter/{id}', [JadwalController::class, 'edit'])->name('edit-jadwal-dokter');
 
-        Route::get('/jadwal-dokter', function () {
-            return view('admin.page.jadwal-dokter');
-        })->name('jadwal-dokter');
+            // Post
+            Route::post('/post-jadwal', [JadwalController::class, 'store'])->name('post-jadwal');
+            Route::post('/update-jadwal/{id}', [JadwalController::class, 'update'])->name('update-jadwal');
+            Route::post('/delete-jadwal/{id}', [JadwalController::class, 'destroy'])->name('delete-jadwal');
 
-        Route::get('/tutorial-video', [
-            function () {
-                return view('admin.page.tutorial-video');
-            }
-        ])->name('tutorial-video');
+        });
 
+        Route::group(['prefix' => 'video'], function () {
+            Route::get('/video', [VideoController::class, 'index'])->name('tutorial-video');
+            Route::get('/add-video', [VideoController::class, 'create'])->name('add-video');
+            Route::get('/edit-video/{id}', [VideoController::class, 'edit'])->name('edit-video');
+
+            // Post
+            Route::post('/post-video', [VideoController::class, 'store'])->name('post-video');
+            Route::post('/update-video/{id}', [VideoController::class, 'update'])->name('update-video');
+            Route::post('/delete-video/{id}', [VideoController::class, 'destroy'])->name('delete-video');
+        });
 
         Route::group(['prefix' => 'monitoring'], function () {
             Route::get('/monitoring-antrian', [AntrianController::class, 'monitoring'])->name('monitoring-antrian');
@@ -77,17 +100,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::group(['middleware' => 'roleCheck:user'], function () {
-        Route::get('/home', function () {
-            return view('user.home');
-        })->name('home');
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-        Route::get('/berita', function () {
-            return view('user.berita');
-        })->name('berita');
+        Route::get('/berita', [HomeController::class, 'berita'])->name('berita');
 
-        Route::get('/detail-berita', function () {
-            return view('user.detail-berita');
-        })->name('detail-berita');
+        Route::get('/detail-berita/{id}', [HomeController::class, 'detail'])->name('detail-berita');
         // Home Page & Berita & Detail Berita
 
         // Test Page & Test Result

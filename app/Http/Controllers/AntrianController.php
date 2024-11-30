@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Antrian;
+use App\Models\Jadwal;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -165,7 +166,9 @@ class AntrianController extends Controller
     public function antrian()
     {
         $data = [
-            'antrian' => Antrian::all()
+            'antrian' => Antrian::all(),
+            'jadwal' => Jadwal::orderBy('created_at', 'desc')->get()
+
         ];
         return view('user.antrian', $data);
     }

@@ -22,20 +22,20 @@
                 <div class="notification-page-full mt-24">
                     <h1 class="d-none">Notification Page</h1>
                     {{--  Foreach  --}}
-                    <a href="{{ route('detail-berita') }}">
-                        <div class="notification-page-sec">
-                            <div class="notification-img">
-                                <img src="{{ asset('assets/image-new/jantung.jpeg') }}" alt="notification-img">
+                    @foreach ($artikel as $item)
+                        <a href="{{ route('detail-berita', $item->id) }}">
+                            <div class="notification-page-sec">
+                                <div class="notification-img">
+                                    <img src="{{ asset('/images/artikel/' . $item->foto) }}" alt="notification-img">
+                                </div>
+                                <div class="notification-content">
+                                    <h3 class="noti-title">{{ $item->judul }}</h3>
+                                    <p class="noti-desc">{{ $item->isi }}</p>
+                                    <p class="noti-subtitle mt-8">{{ $item->created_at->diffForHumans() }}</p>
+                                </div>
                             </div>
-                            <div class="notification-content">
-                                <h3 class="noti-title">Jantung Koroner</h3>
-                                <p class="noti-desc">Jantung Koroner adalah kondisi medis di mana pembuluh darah
-                                    yang
-                                    memasok darah ke jantung tersumbat atau menyempit.</p>
-                                <p class="noti-subtitle mt-8">34 minutes ago</p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
                     {{--  Foreach  --}}
                 </div>
             </div>

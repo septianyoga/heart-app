@@ -23690,7 +23690,7 @@ input[type="number"] {
     padding: 5px 0;
     margin: 30px 0 0 0;
     border-radius: 15px;
-    background-color: #F90965;
+    background-color: #00930c;
     color: #fff;
 }
 
@@ -23794,4 +23794,10 @@ input[type="number"] {
 
 .submit-btn:hover {
     background: #45a049;
+}
+
+.grid-layouts{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }

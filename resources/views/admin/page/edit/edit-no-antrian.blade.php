@@ -6,8 +6,8 @@
             <div class="card-header">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        <li class="breadcrumb-item"><a href="javascript: history.go(-1)">Kelola No Antrian</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit</li>
                     </ol>
                 </nav>
             </div>

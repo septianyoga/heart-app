@@ -6,7 +6,7 @@
                 <img src="{{ asset('assets/image-new/ilustrasi/char.png') }}" alt="">
             </div>
             <div class="profile-info">
-                <h1 class="profile-name">Welcome, Iqbal</h1>
+                <h1 class="profile-name">Welcome, {{ Auth::user()->name }}</h1>
             </div>
         </div>
         <div class="container">
@@ -28,25 +28,45 @@
             <div class="container">
                 {{--  Foreach  --}}
                 <div class="prodcut-sec-slide">
-                    <div class="prodcut-sec-slide-full">
-                        <div class="slider-img-sec">
-                            <img src="{{ asset('assets/image-new/user.jpg') }}" alt="">
-                        </div>
-                        <div class="slider-content-sec">
-                            <div class="slider-content-sec-full">
-                                <h3 class="slider-pro-title">Dr. Iqbal</h3>
-                                <div class="status mt-2">
-                                    <div class="d-flex justify-content-start align-items-center">
-                                        <div class="sibuk me-2"></div>
-                                        <div class="kosong me-2"></div>
+                    @foreach ($jadwal as $item)
+                        <div class="prodcut-sec-slide-full">
+                            <div class="slider-img-sec">
+                                <img src="{{ asset('images/dokter/' . $item->foto) }}" alt="">
+                            </div>
+                            <div class="slider-content-sec">
+                                <div class="slider-content-sec-full">
+                                    <h3 class="slider-pro-title">Dr. {{ $item->nama_dokter }}</h3>
+                                    <div class="status mt-2">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            @if ($item->sibuk == 1)
+                                                @if ($item->kosong == 1)
+                                                    <div class="sibuk me-2"></div>
+                                                    <div class="kosong me-2"></div>
+                                                @else
+                                                    <div class="sibuk me-2"></div>
+                                                @endif
+                                            @elseif($item->kosong == 1)
+                                                <div class="kosong me-2"></div>
+                                            @elseif($item->sibuk == 0 && $item->kosong == 0)
+                                                {{ null }}
+                                            @endif
+                                        </div>
                                     </div>
+                                    <h3 class="slider-pro-title mt-4">Jadwal Dokter</h3>
+                                    <p class="slider-pro-subtitle">
+                                        @if ($item->hari_akhir == null)
+                                            {{ $item->hari_awal }}
+                                        @else
+                                            {{ $item->hari_awal }} - {{ $item->hari_akhir }}
+                                        @endif
+                                    </p>
+                                    <p class="slider-pro-subtitle">
+                                        {{ \Carbon\Carbon::parse($item->jam_awal)->format('H:i') }} -
+                                        {{ \Carbon\Carbon::parse($item->jam_akhir)->format('H:i') }}</p>
                                 </div>
-                                <h3 class="slider-pro-title mt-4">Jadwal Dokter</h3>
-                                <p class="slider-pro-subtitle">Senin - Jumat</p>
-                                <p class="slider-pro-subtitle">08:00 - 16:00</p>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
                 {{--  Foreach  --}}
             </div>
@@ -70,20 +90,20 @@
                 </div>
                 <div class="notification-page-full mt-24">
                     {{--  Foreach  --}}
-                    <a href="{{ route('detail-berita') }}">
-                        <div class="notification-page-sec">
-                            <div class="notification-img">
-                                <img src="{{ asset('assets/image-new/jantung.jpeg') }}" alt="notification-img">
+                    @foreach ($artikel as $artikels)
+                        <a href="{{ route('detail-berita', $artikels->id) }}">
+                            <div class="notification-page-sec">
+                                <div class="notification-img">
+                                    <img src="{{ asset('/images/artikel/' . $artikels->foto) }}" alt="notification-img">
+                                </div>
+                                <div class="notification-content">
+                                    <h3 class="noti-title">{{ $artikels->judul }}</h3>
+                                    <p class="noti-desc">{{ $artikels->isi }}</p>
+                                    <p class="noti-subtitle mt-8">{{ $artikels->created_at->diffForHumans() }}</p>
+                                </div>
                             </div>
-                            <div class="notification-content">
-                                <h3 class="noti-title">Jantung Koroner</h3>
-                                <p class="noti-desc">Jantung Koroner adalah kondisi medis di mana pembuluh darah
-                                    yang
-                                    memasok darah ke jantung tersumbat atau menyempit.</p>
-                                <p class="noti-subtitle mt-8">34 minutes ago</p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
                     {{--  Foreach  --}}
                 </div>
             </div>
