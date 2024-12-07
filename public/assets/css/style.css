@@ -6807,10 +6807,91 @@ ul.input.date-picker-input {
     z-index: 1000;
     margin-top: 60px;
 }
+
 .footer-icon.login {
-    width:100%;
+    width: 100%;
     z-index: 1000;
     margin-top: 60px;
 }
 
+.chat-button {
+    position: fixed;
+    bottom: 15%;
+    right: 4%;
+    background-color: #E9E9E9;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
 
+.chat-section {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #f9f9f9;
+}
+
+.chat-section .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-section .chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.chat-section .chat-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+}
+
+.chat-section .admin-message {
+    background-color: #e8f0fe;
+    align-self: flex-start;
+}
+
+.chat-section .user-message {
+    background-color: #d1f7c4;
+    align-self: end;
+    justify-self: end;
+}
+
+.chat-section .chat-input-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+.chat-section .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.chat-section .form-control {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.chat-section .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}

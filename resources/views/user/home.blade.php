@@ -108,6 +108,9 @@
                 </div>
             </div>
         </div>
+        <a href="{{ route('chat-admin') }}" class="chat-button">
+            <img src="{{ asset('assets/image-new/chat.png') }}" alt="Chat" style="width: 40px; height: 40px">
+        </a>
     </section>
 
     <script>
