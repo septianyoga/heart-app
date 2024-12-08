@@ -48,4 +48,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function received()
+    {
+        return $this->hasMany(Chat::class, 'receiver_id');
+    }
+    public function send()
+    {
+        return $this->hasMany(Chat::class, 'sender_id');
+    }
+
 }

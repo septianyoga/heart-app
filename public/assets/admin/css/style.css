@@ -22113,6 +22113,11 @@ div.tox .btn-icon-text.btn-lg.tox-button .btn-icon-prepend {
     padding-top: 11px;
     padding-bottom: 11px
 }
+#chat-box {
+    overflow-y: auto;
+    max-height: 200px; /* Atur sesuai desain */
+}
+
 
 @media (max-width:991px) {
     .chat-wrapper .chat-content {

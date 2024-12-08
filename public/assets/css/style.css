@@ -6827,11 +6827,13 @@ ul.input.date-picker-input {
 }
 
 .chat-section {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     background-color: #f9f9f9;
+    scroll-behavior: smooth;
+    overflow-y: auto;
 }
 
 .chat-section .chat-container {
@@ -6894,4 +6896,11 @@ ul.input.date-picker-input {
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
+}
+.chat-section .message-time {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888; /* Warna abu-abu untuk teks waktu */
+    text-align: right; /* Waktu akan sejajar ke kanan */
 }

@@ -40,10 +40,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('update-password');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/chat', function () {
-            return view('admin.page.chat');
-        })->name('chat');
+        Route::group(['prefix' => 'admin/'], function () {
+            Route::get('/chat', [ChatController::class, 'indexAdmin'])->name('chat');
+            Route::get('/fetch-admin', [ChatController::class, 'fetchMessages'])->name('fetch.to-user');
+            Route::post('/mark-seen/{receiverId}', [ChatController::class, 'markMessagesAsSeen'])->name('mark.seen');
+            Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('send.to-user');
 
+
+        });
         Route::group(['prefix' => 'antrian'], function () {
             Route::get('/no-antrian', [AntrianController::class, 'index'])->name('no-antrian');
             Route::get('/add-no-antrian', [AntrianController::class, 'create'])->name('add-no-antrian');
@@ -149,7 +153,11 @@ Route::middleware('auth')->group(function () {
         // Profile
 
         // Chat
-        Route::get('/chat', [ChatController::class, 'index'])->name('chat-admin');
+        Route::group(['prefix' => 'user'], function () {
+            Route::get('/chat', [ChatController::class, 'index'])->name('chat-admin');
+            Route::get('/fetch-message', [ChatController::class, 'fetchMessagesFromUserToAdmin'])->name('fetch.to-admin');
+            Route::post('/send-message', [ChatController::class, 'sendMessageFromUserToAdmin'])->name('send.to-admin');
+        });
         // Chat
     });
 });
