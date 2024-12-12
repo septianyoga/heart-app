@@ -39,12 +39,11 @@
     </section>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.0.3/pusher.min.js"></script>
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script>
         // Initialize Pusher
         const pusher = new Pusher('4ca13cd3a9737e07eec8', {
             cluster: 'ap1',
-            encrypted: true,
         });
 
         // Subscribe to the channel
@@ -56,11 +55,10 @@
             renderMessage(data.message, data.sender_id === {{ Auth::id() }} ? 'user-message' : 'admin-message');
         });
 
-        // Render new message in the chat box
         function renderMessage(message, type) {
             const chatBox = document.getElementById('chat-box');
 
-            // Buat elemen pesan
+            // Create a message element
             const messageDiv = document.createElement('div');
             messageDiv.className = `chat-message ${type}`;
             messageDiv.innerHTML = `
@@ -69,17 +67,14 @@
             `;
 
             chatBox.appendChild(messageDiv);
-            chatBox.scrollTop = chatBox.scrollHeight; // Scroll ke bawah otomatis
+            chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the bottom
         }
 
         function getCurrentTime() {
             const now = new Date();
             const hours = now.getHours();
             const minutes = now.getMinutes();
-            const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')} ${
-                hours >= 12 ? 'PM' : 'AM'
-            }`;
-            return formattedTime;
+            return `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')} ${hours >= 12 ? 'PM' : 'AM'}`;
         }
 
         function fetchMessages() {
@@ -164,4 +159,6 @@
 
         });
     </script>
+
+
 @endsection

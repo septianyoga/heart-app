@@ -17,23 +17,23 @@ class SendAdminMessage implements ShouldBroadcastNow
 {
     use SerializesModels;
 
-    public $chat;
+    public $message;
+    public $receiverId;
+    public $senderId;
 
-    // Constructor to initialize the message
-    public function __construct(Chat $chat)
+    public function __construct($message, $senderId, $receiverId)
     {
-        $this->chat = $chat;
+        $this->message = $message;
+        $this->senderId = $senderId;
+        $this->receiverId = $receiverId;
     }
 
-    // The channel the event should broadcast on
     public function broadcastOn()
     {
-        return new Channel(name: 'admin-chat');
+        return new Channel('admin-chat');
     }
-
-    // The name of the event in the frontend
     public function broadcastAs()
     {
-        return 'SendAdminMessage';
+        return 'SendAdminMessage'; // Nama event broadcasting
     }
 }

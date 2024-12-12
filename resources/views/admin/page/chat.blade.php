@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.0.3/pusher.min.js"></script>
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script>
         let receiverId = null;
         let receiverName = '';
@@ -121,10 +121,10 @@
 
         const pusher = new Pusher('4ca13cd3a9737e07eec8', {
             cluster: 'ap1',
-            encrypted: true,
         });
         const channel = pusher.subscribe('admin-chat');
         channel.bind('SendAdminMessage', function(data) {
+            console.log('Pesan dari Pusher:', data);
             const messageType = data.sender_id === {{ Auth::id() }} ? 'me' : 'friend';
             if (data.receiver_id === receiverId) {
                 renderMessage(data.message, messageType);
@@ -155,8 +155,6 @@
             chatBox.scrollTop = chatBox.scrollHeight;
         }
 
-
-
         function getCurrentTime() {
             const now = new Date();
             const hours = now.getHours();
@@ -174,7 +172,8 @@
 
                         if (data.messages && data.messages.length > 0) {
                             data.messages.forEach(message => {
-                                const messageType = message.sender_id === {{ Auth::id() }} ? 'me' : 'friend';
+                                const messageType = message.sender_id === {{ Auth::id() }} ? 'me' :
+                                'friend';
                                 renderMessageWithTimestamp(message.message, messageType, message.created_at);
                             });
 
@@ -192,6 +191,7 @@
                     });
             }
         }
+
 
         document.addEventListener('DOMContentLoaded', fetchMessages);
 

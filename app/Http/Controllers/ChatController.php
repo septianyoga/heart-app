@@ -53,15 +53,19 @@ class ChatController extends Controller
             'receiver_id' => 'required|exists:users,id', // Sesuaikan dengan tabel admin
         ]);
 
+        $message = $request->input('message');
+        $receiverId = 1;
+        $senderId = Auth::id();
+
 
         $chat = new Chat();
-        $chat->sender_id = Auth::id(); // Pengirim
-        $chat->receiver_id = 1; // Penerima
-        $chat->message = $request->message;
+        $chat->sender_id = $senderId;
+        $chat->receiver_id = $receiverId;
+        $chat->message = $message;
         $chat->seen = 0; // Belum terbaca
         $chat->save();
 
-        event(new SendUserMessage($chat)); // Pastikan event ini bekerja
+        broadcast(new SendUserMessage($message, $senderId, $receiverId));
 
         return response()->json(['success' => true, 'message' => 'Pesan terkirim']);
     }
@@ -94,7 +98,7 @@ class ChatController extends Controller
         ]);
 
         // Kirimkan event ke Pusher untuk notifikasi pesan
-        event(new SendAdminMessage($message));
+        broadcast(new SendAdminMessage($message, $sender_id, $receiver_id))->toOthers();
 
         return response()->json([
             'success' => true,

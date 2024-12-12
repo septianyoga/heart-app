@@ -11,24 +11,25 @@ class SendUserMessage implements ShouldBroadcast
 {
     use SerializesModels;
 
-    public $chat;
+    public $message;
+    public $sender_id;
+    public $receiver_id;
 
-    // Constructor to initialize the message
-    public function __construct(Chat $chat)
+    public function __construct($message, $sender_id, $receiver_id)
     {
-        $this->chat = $chat;
+        $this->message = $message;
+        $this->sender_id = $sender_id;
+        $this->receiver_id = $receiver_id;
     }
 
-    // The channel the event should broadcast on
     public function broadcastOn()
     {
-        return new Channel(name: 'user-chat');
+        // Broadcast ke channel user-chat
+        return new Channel('user-chat');
     }
-
-    // The name of the event in the frontend
     public function broadcastAs()
     {
-        return 'SendUserMessage';
+        return 'SendUserMessage'; // Nama event broadcasting
     }
 }
 
