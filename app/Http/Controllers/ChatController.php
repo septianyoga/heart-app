@@ -65,7 +65,7 @@ class ChatController extends Controller
         $chat->seen = 0; // Belum terbaca
         $chat->save();
 
-        broadcast(new SendUserMessage($message, $senderId, $receiverId));
+        broadcast(new SendUserMessage($message, $senderId, $receiverId))->toOthers();
 
         return response()->json(['success' => true, 'message' => 'Pesan terkirim']);
     }

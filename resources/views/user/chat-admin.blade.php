@@ -46,12 +46,19 @@
             cluster: 'ap1',
         });
 
+        pusher.connection.bind('connected', function() {
+            console.log('Pusher connected successfully');
+        });
+
+        pusher.connection.bind('error', function(err) {
+            console.error('Pusher connection error:', err);
+        });
         // Subscribe to the channel
         const channel = pusher.subscribe('user-chat');
 
         // Listen for the SendUserMessage event
         channel.bind('SendUserMessage', function(data) {
-            console.log('Received message:', data);
+            console.log('Received message:');
             renderMessage(data.message, data.sender_id === {{ Auth::id() }} ? 'user-message' : 'admin-message');
         });
 

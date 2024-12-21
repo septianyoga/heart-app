@@ -465,9 +465,10 @@ input[type=number] {
 }
 
 .skip_btn {
-    width: 34px;
+    width: 48px;
     display: flex;
-    margin-left: auto;
+    justify-self: end;
+    margin-right: 20px;
 }
 
 .skip_btn a {
@@ -478,6 +479,7 @@ input[type=number] {
     text-align: right;
     color: #FFFFFF;
 }
+
 
 .top-boading {
     position: absolute;

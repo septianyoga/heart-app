@@ -4,12 +4,15 @@ namespace App\Events;
 
 use App\Models\Chat;
 use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class SendUserMessage implements ShouldBroadcast
 {
-    use SerializesModels;
+    use Dispatchable, InteractsWithSockets;
 
     public $message;
     public $sender_id;
@@ -20,6 +23,7 @@ class SendUserMessage implements ShouldBroadcast
         $this->message = $message;
         $this->sender_id = $sender_id;
         $this->receiver_id = $receiver_id;
+        Log::info('Broadcasting event', ['message' => $message, 'sender_id' => $sender_id]);
     }
 
     public function broadcastOn()

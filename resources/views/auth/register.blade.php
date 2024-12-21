@@ -1,6 +1,13 @@
-@extends('components.layout', ['title' => 'Heart App - Login'])
+@extends('components.layout', ['title' => 'Heart App - Daftar'])
 
 @section('content')
+    <style>
+        .txt-input::placeholder{
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+        }
+    </style>
     <section id="sign-in-screen">
         <div class="container">
             <div class="sign-in-screen_full">
@@ -10,70 +17,71 @@
                     </div>
                     <form class="sign-in-form mt-16" method="post" action="/register">
                         @csrf
-                        <h1 class="text-center">Register</h1>
+                        <h1 class="text-center">Daftar</h1>
                         <div class="form-sec mb-3">
                             <label class="txt-lbl" for="nik">NIK</label><br>
-                            <input type="nik" id="nik" name="nik" placeholder="NIK in here" class="txt-input">
+                            <input type="nik" id="nik" name="nik" placeholder="NIK disini" class="txt-input">
                             @error('nik')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger ">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
                         <div class="form-sec mb-3">
                             <label class="txt-lbl" for="name">Nama Lengkap</label><br>
-                            <input type="name" id="name" name="name" placeholder="Name in here"
-                                class="txt-input">
+                            <input type="name" id="name" name="name" placeholder="Name disini" class="txt-input">
                             @error('name')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger ">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
                         <div class="form-sec mb-3">
                             <label class="txt-lbl" for="no_hp">No Telepon</label><br>
-                            <input type="no_hp" id="no_hp" name="no_hp" placeholder="No Telepon in here"
+                            <input type="no_hp" id="no_hp" name="no_hp" placeholder="No Telepon disini"
                                 class="txt-input">
                             @error('no_hp')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger ">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
                         <div class="form-sec mb-3">
                             <label class="txt-lbl" for="email">Email</label><br>
-                            <input type="email" id="email" name="email" placeholder="Email in here"
+                            <input type="email" id="email" name="email" placeholder="Email disini"
                                 class="txt-input">
                             @error('email')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger ">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
                         <div class="form-sec mb-3">
                             <label class="txt-lbl" for="password">Password</label><br>
-                            <input type="password" id="password" name="password" placeholder="Password in here"
+                            <input type="password" id="password" name="password" placeholder="Password disini"
                                 class="txt-input">
                             @error('password')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger ">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
                         <div class="form-sec mb-3">
                             <label class="txt-lbl" for="password_confirmation">Konfirmasi Password</label><br>
                             <input type="password" id="password_confirmation" name="password_confirmation"
-                                placeholder="Password in here" class="txt-input">
+                                placeholder="Password disini" class="txt-input">
                         </div>
                         <div class="form-sec mb-3 p-2">
                             <label class="txt-lbl">Apakah ada BPJS?</label><br>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center me-3">
-                                    <input type="radio" class="me-2" name="bpjs" id="ya" onclick="toggleBPJSForm(true)">
+                                    <input type="radio" class="me-2" name="bpjs" id="ya"
+                                        onclick="toggleBPJSForm(true)">
                                     <label for="ya" class="text-nowrap">Ya, Ada</label>
                                 </div>
                                 <div class="d-flex align-items-center">
-                                    <input type="radio" class="me-2" name="bpjs" id="tidak" onclick="toggleBPJSForm(false)">
+                                    <input type="radio" class="me-2" name="bpjs" id="tidak"
+                                        onclick="toggleBPJSForm(false)">
                                     <label for="tidak" class="text-nowrap">Tidak ada</label>
                                 </div>
                             </div>
@@ -81,19 +89,19 @@
                         <div class="form-sec mb-3 d-none" id="bpjsForm">
                             <label class="txt-lbl">Nomor BPJS</label><br>
                             <input type="text" inputmode="numeric" id="no_bpjs" name="no_bpjs"
-                                placeholder="Nomor BPJS in here" class="txt-input">
+                                placeholder="Nomor BPJS disini" class="txt-input">
                             @error('no_bpjs')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger ">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
                         <div class="sign-in mt-32">
-                            <button type="submit">Sign Up</button>
+                            <button type="submit">Daftar</button>
                         </div>
                     </form>
                     <div class="block-footer">
-                        <p>Have an account? <a href="/login">Sign In</a></p>
+                        <p>Sudah punya akun? <a href="/login">Login sini</a></p>
                     </div>
                 </div>
             </div>

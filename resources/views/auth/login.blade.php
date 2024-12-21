@@ -9,34 +9,53 @@
             <div class="sign-in-screen_full">
                 <div class="sign-in-screen-top">
                     <h1 class="text-center">Selamat Datang</h1>
-                    <form class="sign-in-form mt-16" action="/login" method="post">
+                    <form class="sign-in-form mt-16" action="/login" method="post" novalidate>
                         @csrf
                         <div class="form-sec">
                             <label class="txt-lbl">Email</label><br>
-                            <input type="email" id="email" name="email" placeholder="Email in here"
-                                class="txt-input">
+                            <input type="email" id="email" name="email" placeholder="Email Anda" class="txt-input">
                             @error('email')
-                                <div class="form_bottom_boder">
+                                <small class="text-danger">
                                     {{ $message }}
-                                </div>
+                                </small>
                             @enderror
                         </div>
-                        <div class="form-sec mt-32">
+                        <div class="form-sec mt-3">
                             <label class="txt-lbl">Password</label><br>
-                            <input type="password" id="password" name="password" placeholder="Password in here"
-                                class="txt-input">
-                            @error('password')
-                                <div class="form_bottom_boder">
-                                    {{ $message }}
+                            <div class="password-wrapper">
+                                <input type="password" id="password" name="password" placeholder="Password Anda"
+                                    class="txt-input">
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input" id="showPassword" type="checkbox" value=""
+                                        onchange="togglePasswordVisibility()">
+                                    <label class="form-check-label" for="showPassword">
+                                        Lihat Password
+                                    </label>
                                 </div>
+                            </div>
+                            @error('password')
+                                <small class="text-danger">
+                                    {{ $message }}
+                                </small>
                             @enderror
                         </div>
+
+                        <!-- Tambahkan Google reCAPTCHA -->
+                        <div class="form-sec mt-32">
+                            <div class="g-recaptcha" data-sitekey="6LdlIaIqAAAAACzuQzAOkcIRMV4FpDpnbiRPxIi_"></div>
+                            @error('g-recaptcha-response')
+                                <small class="text-danger">
+                                    {{ $message }}
+                                </small>
+                            @enderror
+                        </div>
+
                         <div class="sign-in mt-32">
-                            <button type="submit">Sign In</button>
+                            <button type="submit">Login</button>
                         </div>
                     </form>
                     <div class="block-footer">
-                        <p>Don’t have an account? <a href="/register">Sign Up</a></p>
+                        <p>Belum punya akun? <a href="/register">Daftar Yuk</a></p>
                     </div>
                 </div>
             </div>
@@ -48,4 +67,21 @@
             </div>
         </div>
     </section>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        /**
+         * Fungsi untuk mengubah visibility password.
+         */
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('showPassword');
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.setAttribute('type', 'text');
+            } else {
+                passwordInput.setAttribute('type', 'password');
+            }
+        }
+    </script>
 @endsection

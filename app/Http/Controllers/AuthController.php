@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
@@ -84,15 +85,46 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    public function authenticate(LoginStoreRequest $request)
+    public function authenticate(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            'g-recaptcha-response' => 'required',
+        ], [
+            'g-recaptcha-response.required' => 'Captcha harus diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Email harus memiliki format yang benar.',
+            'password.required' => 'Kata sandi wajib diisi.',
+            'password.min' => 'Kata sandi harus memiliki minimal :min karakter.',
+        ]);
+
+        // Secret key langsung ditulis di sini (hanya contoh, tidak disarankan)
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => '6LdlIaIqAAAAABxH0xpi2IBiiEwxMY7y1wuRAlJi',
+            'response' => $request->input('g-recaptcha-response'),
+        ]);
+
+        $responseBody = json_decode($response->body());
+        if (!$responseBody->success) {
+            if (isset($responseBody->{'error-codes'})) {
+                foreach ($responseBody->{'error-codes'} as $code) {
+                    logger("Error Code: $code");
+                }
+            }
+            return back()->withErrors(['g-recaptcha-response' => 'Captcha tidak valid.']);
+        }
+
+        // Lanjutkan proses login jika Captcha valid
         $credentials = $request->only('email', 'password');
         if (auth()->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/dashboard');
+            return redirect()->intended('dashboard');
         }
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+
+        return back()->withErrors(['email' => 'Email atau password salah.']);
+
     }
+
+
 }

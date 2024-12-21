@@ -5,7 +5,7 @@
         <div class="main-header">
         </div>
         <div class="skip_btn_1 skip_btn">
-            <a href="{{ route('login') }}">Skip</a>
+            <a href="{{ route('login') }}" class="btn btn-secondary">Skip</a>
         </div>
         <div class="img">
             <img src="{{ asset('assets/image-new/ilustrasi/ilustrasi-1.png') }}" style="width: 100%;" alt="">

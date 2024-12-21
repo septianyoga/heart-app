@@ -4,7 +4,7 @@
     <div class="container Onboarding-Screen-1-full">
         <div class="main-header">
         </div>
-        <div class="skip_btn_1 skip_btn">
+        <div class="skip_btn_1 skip_btn" class="btn btn-secondary">
         </div>
         <div class="img">
             <img src="{{ asset('assets/image-new/ilustrasi/ilustrasi-3.png') }}" style="width: 100%;" alt="">
